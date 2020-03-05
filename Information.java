@@ -74,11 +74,11 @@ public class Information {
         System.out.println("Input date below (dd.mm.yyyy):");
         String birthday = new Scanner(System.in).nextLine();
         date = new Date(Integer.parseInt(birthday.substring(0,2)), Integer.parseInt(birthday.substring(3,5)),
-                Integer.parseInt(birthday.substring(6,101)));
+                Integer.parseInt(birthday.substring(6,10)));
         while (true){
             System.out.println("Enter Level");
             this.level = new Scanner(System.in).nextLine();
-            if (!this.level.equals("TC")){
+            if (!(this.level.equals("TC") || this.level.equals("CD")) || this.level.equals("DH")){
                 System.out.println("Please enter again");
             }
             System.out.print("Enter to input... (q to quit): ");

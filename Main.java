@@ -17,7 +17,6 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Manage manage = new Manage();
-        ArrayList<Date> ds = new ArrayList<Date>();
         while (true){
             menu();
             int choiceNumber = scanner.nextInt();
@@ -31,7 +30,20 @@ public class Main {
                     scanner.nextLine();
                     break;
                 case 2:
-                    break;
+                    Information information1 = new Information();
+                    System.out.println("Enter id");
+                    int idUpdate = new Scanner(System.in).nextInt();
+
+                    if (manage.searchInformation(idUpdate).size()!=0){
+                        information1.setStaffId(idUpdate);
+                        System.out.println("Enter name");
+                        String name = new Scanner(System.in).nextLine();
+                        information1.setName(name);
+                        System.out.println("Enter gender");
+                        String gender = new Scanner(System.in).nextLine();
+                        information1.setGender(gender);
+                        manage.update(information1);
+                    }
                 case 3:
                     System.out.print("Enter id to search: ");
                     int id = new Scanner(System.in).nextInt();
